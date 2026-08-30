@@ -9,6 +9,7 @@ To study and implement DDL commands and different types of constraints.
 Used to create a new relation (table).
 
 **Syntax:**
+
 ```sql
 CREATE TABLE (
   field_1 data_type(size),
@@ -104,124 +105,194 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+<img width="1289" height="292" alt="image" src="https://github.com/user-attachments/assets/4cb2ec0b-3017-45fa-9864-e90f96651117" />
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Bonuses(
+BonusID INT PRIMARY KEY,
+EmployeeID INT,
+BonusAmount REAL CHECK(BonusAmount>0),
+BonusDate DATE,
+Reason TEXT NOT NULL
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="920" height="199" alt="image" src="https://github.com/user-attachments/assets/6c165d3c-6463-4947-a7cb-c3fe450091f3" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+
+
+<img width="920" height="199" alt="438734499-560ebfe7-6a54-41b1-a177-84d9a5353047" src="https://github.com/user-attachments/assets/60660e3b-2f8d-4bc7-8849-93769173dc77" />
+
+
+
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Products(ProductID,Name,Category,Price,Stock)
+VALUES(101,'Laptop','Electronics',1500,50);
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1243" height="174" alt="image" src="https://github.com/user-attachments/assets/e43a5545-5c91-489d-a93b-9c630213e392" />
+
+
 
 **Question 3**
----
--- Paste Question 3 here
+
+
+<img width="850" height="355" alt="image" src="https://github.com/user-attachments/assets/b42ee6d3-67d0-4233-ae7d-9dd1efc928b3" />
+
+
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate INT NOT NULL,
+icom_id TEXT(4),
+FOREIGN KEY (icom_id) REFERENCES company(com_id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+
+<img width="1152" height="250" alt="image" src="https://github.com/user-attachments/assets/37c27297-15bf-452d-9824-95771033c6e0" />
+
+
+
 
 **Question 4**
----
--- Paste Question 4 here
+
+<img width="1256" height="260" alt="image" src="https://github.com/user-attachments/assets/8e56d377-7627-4b3f-837f-0541c86bae04" />
+
+
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE ProjectAssignments(
+AssignmentID INT PRIMARY KEY,
+EmployeeID INT,
+ProjectID INT,
+AssignmentDate DATE NOT NULL,
+FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1246" height="211" alt="image" src="https://github.com/user-attachments/assets/acfc34c1-ec21-46d3-a125-fc7bcd82a42d" />
+
+
 
 **Question 5**
----
--- Paste Question 5 here
+
+<img width="796" height="266" alt="image" src="https://github.com/user-attachments/assets/909deb95-7445-4a2e-a02d-dabe6a070fbb" />
+
+
 
 ```sql
--- Paste your SQL code below for Question 5
+INSERT INTO Books(ISBN,Title,Author,Publisher,YearPublished)
+SELECT  ISBN, Title, Author, Publisher, YearPublished
+FROM  Out_of_print_books;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1238" height="220" alt="image" src="https://github.com/user-attachments/assets/65dd490b-d884-4c0b-8861-d799fa77e859" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+
+<img width="754" height="313" alt="image" src="https://github.com/user-attachments/assets/eb760487-5d85-4175-9c22-52a2b9c2b970" />
+
+
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE Events(
+EventID INTEGER,
+EventName TEXT,
+EventDate DATE
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1245" height="294" alt="image" src="https://github.com/user-attachments/assets/a534daf1-9fe3-40b0-82f6-09e040444546" />
 
 **Question 7**
----
--- Paste Question 7 here
+
+<img width="1257" height="396" alt="image" src="https://github.com/user-attachments/assets/3162b6db-ad5e-4546-8d10-45ab8f6cd7ae" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+INSERT INTO Products(ProductID,Name,Category,Price,Stock)
+VALUES(106,'Fitness Tracker','Wearables',NULL,NULL);
+INSERT INTO Products(ProductID,Name,Category,Price,Stock)
+VALUES(107,'Laptop','Electronics',999.99,50);
+INSERT INTO Products(ProductID,Name,Category,Price,Stock)
+VALUES(108,'Wireless Earbuds','Accessories',NULL,100);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1244" height="201" alt="image" src="https://github.com/user-attachments/assets/6339f9d3-4dee-4876-ae0f-fbd71c56b7d5" />
+
 
 **Question 8**
----
--- Paste Question 8 here
+
+<img width="846" height="467" alt="image" src="https://github.com/user-attachments/assets/262dbce8-8369-4b22-8650-efa6c7c5841b" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+ALTER TABLE Companies ADD COLUMN designation varchar(50);
+ALTER TABLE Companies ADD COLUMN net_salary number;
+ALTER TABLE Companies ADD COLUMN dob date;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1247" height="321" alt="image" src="https://github.com/user-attachments/assets/c8a3a674-d1ba-4df5-97f6-18af6af1af0c" />
+
 
 **Question 9**
----
--- Paste Question 9 here
+
+<img width="1258" height="197" alt="image" src="https://github.com/user-attachments/assets/aa597f98-5662-4006-9787-c6da53fd95f0" />
+
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE jobs(
+job_id INT,
+job_title TEXT DEFAULT '',
+min_salary INT DEFAULT 8000,
+max_salary INT DEFAULT NULL);
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1249" height="252" alt="image" src="https://github.com/user-attachments/assets/3c3b4dec-187d-48db-8546-44f3488d2157" />
 
 **Question 10**
----
--- Paste Question 10 here
+
+<img width="1210" height="182" alt="image" src="https://github.com/user-attachments/assets/f1e9e81e-a5d9-4d8c-a13e-05c4d75a4bc4" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+ALTER TABLE Student_details ADD COLUMN Email VARCHAR(50);
+ALTER TABLE Student_details ADD COLUMN MARKS INT DEFAULT 0;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1246" height="183" alt="image" src="https://github.com/user-attachments/assets/c86442d0-6dc7-4514-98cd-0bd7c6ccb726" />
+
 
 
 ## RESULT
